@@ -9,7 +9,6 @@ const slackEvents = createEventAdapter(SLACK_SIGNING_SECRET);
 
 const { WebClient } = require("@slack/web-api");
 
-console.log(env.process.SLACK_TOKEN);
 // Read a token from the environment variables
 const token = env.process.SLACK_TOKEN;
 
@@ -22,6 +21,7 @@ app.use("/slack/events", slackEvents.expressMiddleware());
 // Attach listeners to events by Slack Event "type". See: https://api.slack.com/events/message.im
 slackEvents.on("message", async (event) => {
   console.log(event);
+  console.log(env.process.SLACK_TOKEN);
   if (event.text.toLowerCase().includes("hi")) {
     const res = await web.chat.postMessage({
       type: "message",
