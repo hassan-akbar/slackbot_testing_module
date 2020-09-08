@@ -2,13 +2,14 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const SLACK_SIGNING_SECRET = "0e2a500a00e6949c8b0873f7f8f6a448";
-const SLACK_TOKEN = "xoxb-1355900218177-1347475202419-MsYFPYeRVFqmjSyThUh5SgIg";
+//const SLACK_TOKEN = "xoxb-1355900218177-1347475202419-MsYFPYeRVFqmjSyThUh5SgIg";
 
 const { createEventAdapter } = require("@slack/events-api");
 const slackEvents = createEventAdapter(SLACK_SIGNING_SECRET);
 
 const { WebClient } = require("@slack/web-api");
 
+console.log(env.process.SLACK_TOKEN);
 // Read a token from the environment variables
 const token = env.process.SLACK_TOKEN;
 
