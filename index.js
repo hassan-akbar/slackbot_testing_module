@@ -10,7 +10,7 @@ const slackEvents = createEventAdapter(SLACK_SIGNING_SECRET);
 const { WebClient } = require("@slack/web-api");
 
 // Read a token from the environment variables
-const token = SLACK_TOKEN;
+const token = env.process.SLACK_TOKEN;
 
 // Initialize
 //test deployment on heroku
