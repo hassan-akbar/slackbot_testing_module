@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const SLACK_SIGNING_SECRET = "0e2a500a00e6949c8b0873f7f8f6a448";
-const SLACK_TOKEN = "xoxb-1355900218177-1347475202419-dUBDP1v9mzlJKu1Dxw7QHuoZ";
+const SLACK_TOKEN = "xoxb-1355900218177-1347475202419-7xZRmqFpbqYggIiRZ7UFOBTV";
 
 const { createEventAdapter } = require("@slack/events-api");
 const slackEvents = createEventAdapter(SLACK_SIGNING_SECRET);
